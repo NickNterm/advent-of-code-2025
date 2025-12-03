@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+#include <cstdlib>
+#include <queue>
+#include <vector>
+
+using namespace std;
+typedef long long ll;
+
+map<pair<int, int>, int> mem;
+int dp(string battery, int i, int used) {
+  if (i == battery.length()) {
+    return -1;
+  }
+  pair<int, int> p = {i, used};
+  if (mem.find(p) != mem.end()) {
+    return mem[p];
+  }
+
+  int res = dp(battery, i + 1, used);
+  if (used < 12) {
+    string v = battery[i];
+    int value = atoi(battery[i]) * pow(10, used);
+    res = max(res, )
+  }
+}
+
+int main() {
+  string battery;
+  char c;
+  ll p1 = 0;
+  ll p2 = 0;
+  while (1) {
+    if (scanf("%c", &c) == EOF) {
+      printf("Output p1 %lld\n", p1);
+      break;
+    }
+    if (c == '\n') {
+      int p1v = 0;
+      for (int i = 0; i < battery.length(); i++) {
+        for (int j = i + 1; j < battery.length(); j++) {
+          char num[3] = {battery[i], battery[j], '\0'};
+          p1v = max(p1v, atoi(num));
+        }
+      }
+      battery = "";
+      p1 += p1v;
+    } else {
+      battery += c;
+    }
+  }
+}
