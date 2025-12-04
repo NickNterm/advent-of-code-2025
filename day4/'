@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  vector<vector<char>> grid;
+  grid.push_back(vector<char>());
+  while (1) {
+    char c;
+    scanf("%c", &c);
+    if (c == '\n') {
+      grid.push_back(vector<char>());
+    }
+  }
+}
